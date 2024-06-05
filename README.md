@@ -79,3 +79,4 @@ To run the application:
 - Transition to a graphical user interface (GUI) or web-based interface
 - Integration with real payment gateways
 - Persistent storage for user data and product catalog
+- Implementing junit(maven issues)
