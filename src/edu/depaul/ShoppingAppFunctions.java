@@ -109,5 +109,22 @@ public class ShoppingAppFunctions {
             System.out.println(product.getName() + " - $" + product.getPrice());
         }
     }
+
+    public void placeOrder(Scanner scanner) {
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            try {
+                System.out.print("Enter username: ");
+                String username = scanner.nextLine();
+                orderService.placeOrder(username);
+                System.out.println("Order placed successfully.");
+                Logger.log("Order placed for user: " + username);
+                isValidInput = true;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
+    
     
 }
