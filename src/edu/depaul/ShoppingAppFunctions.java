@@ -75,6 +75,8 @@ public class ShoppingAppFunctions {
                     isValidInput = true;
                 } else {
                     System.out.println("Product not found in catalog.");
+                    System.out.println("Select from the  products given below :");
+                    browseProducts();
                 }
             } catch (Exception e) {
                 System.out.println("Invalid input. Please try again.");

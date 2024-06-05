@@ -1,6 +1,5 @@
 package edu.depaul;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ShoppingAppUI {
