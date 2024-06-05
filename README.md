@@ -6,12 +6,12 @@ This project is a console-based shopping system developed in Java. It demonstrat
 
 ### Features
 
-User Authentication: Register and login functionality for users.
-Product Catalog: A catalog of products, including electronics and clothing.
-Shopping Cart: Singleton implementation for managing products in a shopping cart.
-Order Processing: Place orders and link them to user accounts.
-Payment Processing: Simulate payment processing.
-Logging: Record important events and transactions.
+- User Authentication: Register and login functionality for users.
+- Product Catalog: A catalog of products, including electronics and clothing.
+- Shopping Cart: Singleton implementation for managing products in a shopping cart.
+- Order Processing: Place orders and link them to user accounts.
+- Payment Processing: Simulate payment processing.
+- Logging: Record important events and transactions.
 
 ### Implementation Details
 
