@@ -14,26 +14,42 @@ public class ShoppingAppFunctions {
     }
 
     public void register(Scanner scanner) {
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
-        if (authService.register(username, password)) {
-            System.out.println("User registered successfully.");
-        } else {
-            System.out.println("Username already exists.");
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            try {
+                System.out.print("Enter username: ");
+                String username = scanner.nextLine();
+                System.out.print("Enter password: ");
+                String password = scanner.nextLine();
+                if (authService.register(username, password)) {
+                    System.out.println("User registered successfully.");
+                    isValidInput = true;
+                } else {
+                    System.out.println("Username already exists.");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please try again.");
+            }
         }
     }
 
     public void login(Scanner scanner) {
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
-        if (authService.login(username, password)) {
-            System.out.println("User logged in successfully.");
-        } else {
-            System.out.println("Invalid username or password.");
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            try {
+                System.out.print("Enter username: ");
+                String username = scanner.nextLine();
+                System.out.print("Enter password: ");
+                String password = scanner.nextLine();
+                if (authService.login(username, password)) {
+                    System.out.println("User logged in successfully.");
+                    isValidInput = true;
+                } else {
+                    System.out.println("Invalid username or password.");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please try again.");
+            }
         }
     }
 
@@ -45,28 +61,44 @@ public class ShoppingAppFunctions {
     }
 
     public void addProductToCart(Scanner scanner) {
-        System.out.print("Enter product name: ");
-        String name = scanner.nextLine();
-        Product product = productCatalog.get(name);
-        if (product != null) {
-            CartBuilder cartBuilder = new CartBuilder();
-            cartBuilder.addProduct(product);
-            System.out.println("Product added to cart.");
-        } else {
-            System.out.println("Product not found in catalog.");
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            try {
+                System.out.print("Enter product name: ");
+                String name = scanner.nextLine();
+                Product product = productCatalog.get(name);
+                if (product != null) {
+                    CartBuilder cartBuilder = new CartBuilder();
+                    cartBuilder.addProduct(product);
+                    System.out.println("Product added to cart.");
+                    isValidInput = true;
+                } else {
+                    System.out.println("Product not found in catalog.");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please try again.");
+            }
         }
     }
 
     public void removeProductFromCart(Scanner scanner) {
-        System.out.print("Enter product name: ");
-        String name = scanner.nextLine();
-        Product product = productCatalog.get(name);
-        if (product != null) {
-            CartBuilder cartBuilder = new CartBuilder();
-            cartBuilder.removeProduct(product);
-            System.out.println("Product removed from cart.");
-        } else {
-            System.out.println("Product not found in catalog.");
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            try {
+                System.out.print("Enter product name: ");
+                String name = scanner.nextLine();
+                Product product = productCatalog.get(name);
+                if (product != null) {
+                    CartBuilder cartBuilder = new CartBuilder();
+                    cartBuilder.removeProduct(product);
+                    System.out.println("Product removed from cart.");
+                    isValidInput = true;
+                } else {
+                    System.out.println("Product not found in catalog.");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please try again.");
+            }
         }
     }
 
