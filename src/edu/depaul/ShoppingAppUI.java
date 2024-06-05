@@ -13,6 +13,9 @@ public class ShoppingAppUI {
             System.out.println("1. Register");
             System.out.println("2. Login");
             System.out.println("3. Browse Products");
+            System.out.println("4. Add Product to Cart");
+            System.out.println("5. Remove Product from Cart");
+            System.out.println("6. View Cart");
             System.out.print("Choose an option: ");
 
             int choice = Integer.parseInt(scanner.nextLine());
@@ -25,6 +28,15 @@ public class ShoppingAppUI {
                     break;
                 case 3:
                     functions.browseProducts();
+                    break;
+                case 4:
+                    functions.addProductToCart(scanner);
+                    break;
+                case 5:
+                    functions.removeProductFromCart(scanner);
+                    break;
+                case 6:
+                    functions.viewCart();
                     break;
                 default:
                     System.out.println("Invalid option.");
