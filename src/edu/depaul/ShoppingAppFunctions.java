@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ShoppingAppFunctions {
     private final AuthenticationService authService = new AuthenticationService();
     private final Map<String, Product> productCatalog = new HashMap<>();
+    private final OrderService orderService = new OrderService();
 
     public ShoppingAppFunctions() {
         productCatalog.put("Laptop", ProductFactory.createProduct("electronics", "Laptop", 1000.0));
