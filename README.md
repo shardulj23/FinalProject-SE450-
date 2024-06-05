@@ -60,7 +60,7 @@ Builder: Provides a fluent interface to build and manage the shopping cart.
 
 To run the application:
 
-Compile the Java files using a Java compiler.
+Compile the Java files using a Java compiler. 
 Execute the MainClass, which serves as the main entry point of the application.
 
 ### Usage
