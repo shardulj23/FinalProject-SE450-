@@ -28,10 +28,20 @@ public class OrderService {
     }
 
     private double calculateTotalAmount(List<Product> products) {
-        return 0.0;
+        double totalAmount = 0.0;
+        for (Product product : products) {
+            totalAmount += product.getPrice();
+        }
+        return totalAmount;
     }
 
     private void logOrder(Order order) {
+        StringBuilder orderDetails = new StringBuilder("Order details for customer: ")
+                .append(order.getCustomer()).append("\n");
+        for (Product product : order.getProducts()) {
+            orderDetails.append(product.getName()).append(" - $").append(product.getPrice()).append("\n");
+        }
+        Logger.log(orderDetails.toString());
     }
 
 }
