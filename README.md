@@ -19,6 +19,7 @@ Java Console Application:
 The project is implemented in Java as a console-based application.
 
 Directory Structure:
+```
 src/
 └── edu/
     └── depaul/
@@ -38,6 +39,7 @@ src/
         ├── ShoppingAppFunctions.java
         └── User.java
         └── ShoppingCartTest.java
+```
 
 ### Design Principles and Patterns
 
