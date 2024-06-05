@@ -9,7 +9,6 @@ public class ShoppingAppFunctions {
     private final Map<String, Product> productCatalog = new HashMap<>();
 
     public ShoppingAppFunctions() {
-        // Initialize product catalog
         productCatalog.put("Laptop", ProductFactory.createProduct("electronics", "Laptop", 1000.0));
         productCatalog.put("T-Shirt", ProductFactory.createProduct("clothing", "T-Shirt", 20.0));
     }
@@ -42,6 +41,32 @@ public class ShoppingAppFunctions {
         System.out.println("Products:");
         for (Product product : productCatalog.values()) {
             System.out.println(product.getName() + " - $" + product.getPrice());
+        }
+    }
+
+    public void addProductToCart(Scanner scanner) {
+        System.out.print("Enter product name: ");
+        String name = scanner.nextLine();
+        Product product = productCatalog.get(name);
+        if (product != null) {
+            CartBuilder cartBuilder = new CartBuilder();
+            cartBuilder.addProduct(product);
+            System.out.println("Product added to cart.");
+        } else {
+            System.out.println("Product not found in catalog.");
+        }
+    }
+
+    public void removeProductFromCart(Scanner scanner) {
+        System.out.print("Enter product name: ");
+        String name = scanner.nextLine();
+        Product product = productCatalog.get(name);
+        if (product != null) {
+            CartBuilder cartBuilder = new CartBuilder();
+            cartBuilder.removeProduct(product);
+            System.out.println("Product removed from cart.");
+        } else {
+            System.out.println("Product not found in catalog.");
         }
     }
 
